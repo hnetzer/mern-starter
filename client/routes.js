@@ -2,6 +2,7 @@
 import React from 'react'
 import { Route } from 'react-router'
 import App from './modules/App/App'
+import Counter from './modules/Counter/Counter'
 
 // require.ensure polyfill for node
 if (typeof require.ensure !== 'function') {
@@ -11,5 +12,8 @@ if (typeof require.ensure !== 'function') {
 }
 
 export default (
-  <Route path="/" component={App} />
+  <Route>
+    <Route path="/" component={App} />
+    <Route path="/count" component={Counter} />
+  </Route>
 )

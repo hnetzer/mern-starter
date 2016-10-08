@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))
 }
 
-import posts from './routes/post.routes'
+import counter from './routes/count.routes'
 import dummyData from './dummyData'
 import serverConfig from './config'
 
@@ -43,7 +43,7 @@ app.use(compression())
 app.use(bodyParser.json({ limit: '20mb' }))
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: false }))
 app.use(Express.static(path.resolve(__dirname, '../dist')))
-app.use('/api', posts)
+app.use('/api', counter)
 
 // Render Initial HTML
 const renderFullPage = () => {
